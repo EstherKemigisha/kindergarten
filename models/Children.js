@@ -1,53 +1,7 @@
-// //defining our schema
-// const mongoose = require("mongoose");
-
-// const childrenSchema = new mongoose.Schema({
-//     fname:{
-//         type:String,
-//         trim:true,
-//         // required:true,
-//         //unique:true
-//     },
-//     lname:{
-//         type:String,
-//         trim:true,
-//         // required:true,
-        
-//     },
-    
-//     parentname:{
-//         type:String,
-//         trim:true,
-//         //required:true,
-//     },
-//     parentphone:{
-//         type:String,
-//         trim:true,
-//         //required:true,
-//     },
-//     age:{
-//         type:Number,
-//         trim:true,
-//         //required:true,
-//     },
-//     address:{
-//         type:String,
-//         trim:true,
-//         //required:true,
-//     },
-//     gender:{
-//         type:String,
-//         trim:true,
-//         //required:true,
-    
-//     },
-     
-// })
-
-// module.exports = mongoose.model("Children", childrenSchema);
 
 
-// models/Child.js
+
+// models
 const mongoose = require('mongoose');
 
 const ChildSchema = new mongoose.Schema({
