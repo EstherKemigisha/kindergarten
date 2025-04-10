@@ -35,7 +35,7 @@ router.post('/children/register', async (req, res) => {
         });
         
         await newChildren.save();
-        // req.flash('success_msg', 'Child registered successfully');
+        //'Child registered successfully');
         res.redirect('/');
     } catch (err) {
         console.error(err);
@@ -55,7 +55,7 @@ router.get('/update/:id', async (req, res) => {
         res.render('childrenList', { children });
     } catch (err) {
         console.error(err);
-        // req.flash('error_msg', 'Error fetching child data');
+        // 'Error fetching child data');
         res.redirect('/');
     }
 });
@@ -76,11 +76,11 @@ router.post('/update/:id', async (req, res) => {
             gender
         });
         
-        // req.flash('success_msg', 'Child information updated successfully');
+        // 'Child information updated successfully');
         res.redirect('/');
     } catch (err) {
         console.error(err);
-        // req.flash('error_msg', 'Error updating child information');
+        // 'Error updating child information');
         res.redirect('/');
     }
 });

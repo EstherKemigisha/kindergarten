@@ -45,12 +45,10 @@ router.post("/login",passport.authenticate("local", {failureRedirect: "/login"})
     if (req.user.role === "manager"){
       res.redirect("/");
     }
-    else if (req.user.role === "salesAgent"){
-      res.redirect("/salesAgentDash");
+    else if (req.user.role === "secretary"){
+      res.redirect("/sesretary");
   }
-  else if (req.user.role === "director"){
-    res.redirect("/directorDash");
-}else {
+ else {
   res.send("You do not have any role in the system")
 }
 });

@@ -60,3 +60,6 @@ button:hover {
     font-weight: bold;
     color: black;
 }
+.login-link {
+    color: white;
+}
