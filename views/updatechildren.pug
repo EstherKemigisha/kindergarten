@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' href='/css/children.css')
+.container
+  h2 Register Child
+  form#agentForm(action='/updateChildren?id='+children._id  method='POST')
+  input(type='text' placeholder='First Name' name="fname" style='width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;')
+  input(type='text' placeholder='Last Name' name="lname" style='width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;')
+  input(type='parentname' placeholder=' Parent Name' name="parentname" style='width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;')
+  br
+  input(type='parentphone' placeholder='Parent Phone' name="parentphone" style='width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;')
+  input(type='age' placeholder='Age' name="age" style='width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;')
+  label(for='class')
+      select#class(name='class' required='')
+        option(value='') Select class
+        option(value='baby') Baby
+        option(value='middle') Middle
+        option(value='top') Top
+  br
+  br
+  select#role(name='class')
+        br
+        br
+        option(value='baby') Baby
+        option(value='middle') Middle 
+      br
+      br
+  input(type='address' placeholder='Address' name="address" style='width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;')
+  input(type='gender' placeholder='Gender' name="gender" style='width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;')
+  button(type="submit") Update Child 

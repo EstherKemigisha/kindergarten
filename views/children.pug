@@ -1,0 +1,234 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Child Registration System
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #2d3035;
+        color: white;
+      }
+      .page-container {
+        display: flex;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .form-container {
+        flex: 1;
+        background-color: #1e2124;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .table-container {
+        flex: 1;
+        background-color: #1e2124;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+      h2 {
+        margin-top: 0;
+        color: #ffffff;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      input, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        background: #383c44;
+        color: white;
+        box-sizing: border-box;
+      }
+      .error-message {
+        color: #ff6b6b;
+        font-size: 14px;
+        margin-top: 5px;
+        display: none;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th, td {
+        border: 1px solid #444;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #383c44;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #2d3035;
+      }
+      a {
+        display: inline-block;
+        background-color: #2196F3;
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      a:hover {
+        background-color: #0b7dda;
+      }
+      .success-message {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        display: none;
+      }
+      @media (max-width: 768px) {
+        .page-container {
+          flex-direction: column;
+        }
+      }
+  body
+    .page-container
+      .form-container
+        h2 Register Child
+        #success-message.success-message Registration successful!
+        
+        form#registrationForm(action="/children/register", method="post")
+          .form-group
+            input#fname(type="text", placeholder="First Name", name="fname")
+            .error-message#fname-error First name is required
+            
+          .form-group
+            input#lname(type="text", placeholder="Last Name", name="lname")
+            .error-message#lname-error Last name is required
+            
+          .form-group
+            input#parentname(type="text", placeholder="Parent Name", name="parentname")
+            .error-message#parentname-error Parent name is required
+            
+          .form-group
+            input#parentphone(type="tel", placeholder="Parent Phone", name="parentphone")
+            .error-message#parentphone-error Parent phone is required
+            
+          .form-group
+            input#age(type="number", placeholder="Age", name="age", min="0", max="18")
+            .error-message#age-error Age is required
+            
+          .form-group
+            select#class(name="class")
+              option(value="") Select class
+              option(value="baby") Baby
+              option(value="middle") Middle
+              option(value="top") Top
+            .error-message#class-error Class is required
+            
+          .form-group
+            input#address(type="text", placeholder="Address", name="address")
+            .error-message#address-error Address is required
+            
+          .form-group
+            select#gender(name="gender")
+              option(value="") Select gender
+              option(value="female") Female
+              option(value="male") Male
+            .error-message#gender-error Gender is required
+            
+          button(type="submit") Register
+      
+      .table-container
+        h2 List of Children
+        table
+          thead
+            tr
+              th First Name
+              th Last Name
+              th Parent Name
+              th Parent's Phone
+              th Age
+              th Class
+              th Address
+              th Gender
+              th Action
+          tbody#children-table
+            if children && children.length > 0
+              each child in children
+                tr
+                  td= child.fname
+                  td= child.lname
+                  td= child.parentname
+                  td= child.parentphone
+                  td= child.age
+                  td= child.class
+                  td= child.address
+                  td= child.gender
+                  td
+                    a(href=`/update/${child._id}`) Update
+            else
+              tr
+                td(colspan="9") No children registered yet
+    
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('registrationForm');
+        const successMessage = document.getElementById('success-message');
+        
+        // Fields to validate
+        const fields = [
+          'fname', 'lname', 'parentname', 'parentphone', 
+          'age', 'class', 'address', 'gender'
+        ];
+        
+        // Form submission handler
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          // Reset all error messages
+          fields.forEach(field => {
+            document.getElementById(`${field}-error`).style.display = 'none';
+          });
+          
+          let isValid = true;
+          
+          // Validate each field
+          fields.forEach(field => {
+            const input = document.getElementById(field);
+            if (!input.value.trim()) {
+              document.getElementById(`${field}-error`).style.display = 'block';
+              isValid = false;
+            }
+          });
+          
+          if (isValid) {
+            // Show success message
+            successMessage.style.display = 'block';
+            
+            // Submit the form to the server
+            this.submit();
+            
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+              successMessage.style.display = 'none';
+            }, 3000);
+          }
+        });
+      });

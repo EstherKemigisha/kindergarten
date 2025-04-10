@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/signingup.css">
+</head>
+<body>
+    <div class="container">
+        <h2>SignUp</h2>
+        <form id="register" action="/signingup" method="post">
+            <label for="firstname">Full name :</label>
+            <input id="first" type="text" name="fname" required="">
+            <label for="email">Email :</label>
+            <input id="last" type="text" name="email" required="">
+            <label for="registerPassword">Password:</label>
+            <input id="registerPassword" type="password" name="password" required="">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input id="confirmPassword" type="password" name="confirmPassword" required="">
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <br><br>
+                <option value="secretary">Secretary</option>
+                <option value="manager">Manager</option>
+                <br><br>
+            </select>
+            <button type="submit">SignUp</button>
+        </form>
+    </div>
+</body>
+</html>
