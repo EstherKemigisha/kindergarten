@@ -4,109 +4,8 @@ html
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Child Registration System
-    style.
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #2d3035;
-        color: white;
-      }
-      .page-container {
-        display: flex;
-        gap: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .form-container {
-        flex: 1;
-        background-color: #1e2124;
-        padding: 20px;
-        border-radius: 8px;
-      }
-      .table-container {
-        flex: 1;
-        background-color: #1e2124;
-        padding: 20px;
-        border-radius: 8px;
-        overflow-x: auto;
-      }
-      h2 {
-        margin-top: 0;
-        color: #ffffff;
-      }
-      .form-group {
-        margin-bottom: 15px;
-      }
-      input, select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #444;
-        border-radius: 4px;
-        background: #383c44;
-        color: white;
-        box-sizing: border-box;
-      }
-      .error-message {
-        color: #ff6b6b;
-        font-size: 14px;
-        margin-top: 5px;
-        display: none;
-      }
-      button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        width: 100%;
-      }
-      button:hover {
-        background-color: #45a049;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-      }
-      th, td {
-        border: 1px solid #444;
-        padding: 8px;
-        text-align: left;
-      }
-      th {
-        background-color: #383c44;
-        color: white;
-      }
-      tr:nth-child(even) {
-        background-color: #2d3035;
-      }
-      a {
-        display: inline-block;
-        background-color: #2196F3;
-        color: white;
-        padding: 5px 10px;
-        text-decoration: none;
-        border-radius: 4px;
-      }
-      a:hover {
-        background-color: #0b7dda;
-      }
-      .success-message {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        border-radius: 4px;
-        margin-bottom: 15px;
-        display: none;
-      }
-      @media (max-width: 768px) {
-        .page-container {
-          flex-direction: column;
-        }
-      }
+    link(rel='stylesheet' href='/css/children.css')
+      
   body
     .page-container
       .form-container
@@ -232,3 +131,4 @@ html
           }
         });
       });
+      

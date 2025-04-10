@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: #f4f4f4;
+    background-image: url(/imgs/ju.jpg);
     margin: 0;
     display: flex;
     justify-content: center;

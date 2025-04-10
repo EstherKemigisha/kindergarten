@@ -4,67 +4,8 @@ html
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Update Child Information
-    style.
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #2d3035;
-        color: white;
-      }
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        background-color: #1e2124;
-        padding: 20px;
-        border-radius: 8px;
-      }
-      h2 {
-        margin-top: 0;
-        color: #ffffff;
-      }
-      input, select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #444;
-        border-radius: 4px;
-        background: #383c44;
-        color: white;
-        box-sizing: border-box;
-      }
-      button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        width: 100%;
-      }
-      button:hover {
-        background-color: #45a049;
-      }
-      .btn-secondary {
-        background-color: #6c757d;
-        margin-top: 10px;
-      }
-      .btn-secondary:hover {
-        background-color: #5a6268;
-      }
-      a.cancel-link {
-        display: block;
-        text-align: center;
-        margin-top: 15px;
-        color: white;
-        text-decoration: none;
-      }
-      a.cancel-link:hover {
-        text-decoration: underline;
-      }
-  body
-    .container
+    link(rel='stylesheet' href='/css/childrenList.css')
+    .container#con
       h2 Update Child Information
       form(action=`/update/${children._id}` method='POST')
         input(type='text' name='fname' value=children.fname placeholder='First Name' required)
@@ -83,4 +24,4 @@ html
           option(value='female' selected=(children.gender === 'female')) Female
           option(value='male' selected=(children.gender === 'male')) Male
         button(type='submit') Update
-        a.cancel-link(href='/') Cancel
+        a.cancel-link(href='/childrenList') Cancel
