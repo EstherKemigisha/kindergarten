@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         res.render('children', { children });
     } catch (err) {
         console.error(err);
-        // req.flash('error_msg', 'Error fetching children data');
+        // ('error_msg', 'Error fetching children data');
         res.redirect('/');
     }
 });
@@ -39,7 +39,7 @@ router.post('/children/register', async (req, res) => {
         res.redirect('/');
     } catch (err) {
         console.error(err);
-        // req.flash('error_msg', 'Error registering child');
+        // ('error_msg', 'Error registering child');
         res.redirect('/');
     }
 });
@@ -76,11 +76,22 @@ router.post('/update/:id', async (req, res) => {
             gender
         });
         
-        // 'Child information updated successfully');
+       
         res.redirect('/');
     } catch (err) {
         console.error(err);
-        // 'Error updating child information');
+       
+        res.redirect('/');
+    }
+});
+
+// Delete child
+router.get('/delete/:id', async (req, res) => {
+    try {
+        await Children.findByIdAndDelete(req.params.id);
+        res.redirect('/');
+    } catch (err) {
+        console.error(err);
         res.redirect('/');
     }
 });

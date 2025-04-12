@@ -2,13 +2,13 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 20px;
-        background-color: #2d3035;
+        background-color: white;
         color: white;
       }
       .container {
         max-width: 600px;
         margin: 0 auto;
-        background-color: #1e2124;
+        background-color: #2d3035;
         padding: 20px;
         border-radius: 8px;
       }
