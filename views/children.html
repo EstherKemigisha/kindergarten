@@ -7,25 +7,95 @@
     <link rel="stylesheet" href="/public/css/admin.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Register</h2>
-    
-        <div class="input-group">
-          <input type="text" placeholder="Firstname">
-          <input type="text" placeholder="Lastname">
-        </div>
-    
-        <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;">
-        <input type="password" placeholder="password" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;">
-        <input type="phone" placeholder="phone" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;">
-        <input type="address" placeholder="address" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;">
-        <input type="password" placeholder="password" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #444; border-radius: 4px; background: #383c44; color: white;">
-       
-    
-        <button>Register </button>
-
-        
-   
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Child Registration System</title>
+      <link rel="stylesheet" href="/css/children.css">
+  </head>
+  <body>
+      <div class="page-container">
+          <div class="form-container">
+              <h2>Register Child</h2>
+              <div id="success-message" class="success-message" style="display:none;">Registration successful!</div>
+  
+              <form id="registrationForm" action="/children/register" method="post">
+                  <div class="form-group">
+                      <input type="text" id="fname" placeholder="First Name" name="fname">
+                      <div class="error-message" id="fname-error" style="display:none;">First name is required</div>
+                  </div>
+  
+                  <div class="form-group">
+                      <input type="text" id="lname" placeholder="Last Name" name="lname">
+                      <div class="error-message" id="lname-error" style="display:none;">Last name is required</div>
+                  </div>
+  
+                  <div class="form-group">
+                      <input type="text" id="parentname" placeholder="Parent Name" name="parentname">
+                      <div class="error-message" id="parentname-error" style="display:none;">Parent name is required</div>
+                  </div>
+  
+                  <div class="form-group">
+                      <input type="tel" id="parentphone" placeholder="Parent Phone" name="parentphone">
+                      <div class="error-message" id="parentphone-error" style="display:none;">Parent phone is required</div>
+                  </div>
+  
+                  <div class="form-group">
+                      <input type="number" id="age" placeholder="Age" name="age" min="0" max="18">
+                      <div class="error-message" id="age-error" style="display:none;">Age is required</div>
+                  </div>
+  
+                  <div class="form-group">
+                      <select id="class" name="class">
+                          <option value="">Select class</option>
+                          <option value="baby">Baby</option>
+                          <option value="middle">Middle</option>
+                          <option value="top">Top</option>
+                      </select>
+                      <div class="error-message" id="class-error" style="display:none;">Class is required</div>
+                  </div>
+  
+                  <div class="form-group">
+                      <input type="text" id="address" placeholder="Address" name="address">
+                      <div class="error-message" id="address-error" style="display:none;">Address is required</div>
+                  </div>
+  
+                  <div class="form-group">
+                      <select id="gender" name="gender">
+                          <option value="">Select gender</option>
+                          <option value="female">Female</option>
+                          <option value="male">Male</option>
+                      </select>
+                      <div class="error-message" id="gender-error" style="display:none;">Gender is required</div>
+                  </div>
+  
+                  <button type="submit">Register</button>
+              </form>
+          </div>
+  
+          <div class="table-container">
+              <h2>List of Children</h2>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Parent Name</th>
+                          <th>Parent's Phone</th>
+                          <th>Age</th>
+                          <th>Class</th>
+                          <th>Address</th>
+                          <th>Gender</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody id="children-table">
+                      </tbody>
+              </table>
+              <div id="no-children" style="display:none;">No children registered yet.</div>
+          </div>
       </div>
 </body>
 </html>
