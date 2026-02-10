@@ -4,6 +4,7 @@ body {
   padding: 20px;
   background-color: #2d3035;
   color: white;
+  box-sizing: border-box;
 }
 .page-container {
   display: flex;
@@ -63,6 +64,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  min-width: 600px;
 }
 th, td {
   border: 1px solid #444;
@@ -96,8 +98,66 @@ a:hover {
   display: none;
 }
 @media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
   .page-container {
     flex-direction: column;
+  }
+  
+  .form-container,
+  .table-container {
+    padding: 15px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 6px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .form-container,
+  .table-container {
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 1.3em;
+  }
+  
+  input, select {
+    font-size: 16px;
+  }
+  
+  button {
+    font-size: 16px;
+  }
+  
+  table {
+    font-size: 12px;
+    min-width: 500px;
+  }
+  
+  th, td {
+    padding: 4px 2px;
+  }
+  
+  a {
+    padding: 4px 8px;
+    font-size: 12px;
   }
 }
   

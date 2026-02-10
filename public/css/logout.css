@@ -15,7 +15,9 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 400px;
-    height: 200px;
+    max-width: 90%;
+    height: auto;
+    min-height: 200px;
 }
 
 .logout-button {
@@ -35,4 +37,21 @@ body {
   margin-top: 10px;
   color: green;
   display: none;
+}
+
+@media (max-width: 480px) {
+    .logout-container {
+        width: 100%;
+        max-width: 95%;
+        padding: 15px;
+    }
+    
+    .logout-container h2 {
+        font-size: 1.5em;
+    }
+    
+    .logout-button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
 }

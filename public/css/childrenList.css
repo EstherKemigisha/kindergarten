@@ -4,9 +4,11 @@
         padding: 20px;
         background-color: white;
         color: white;
+        box-sizing: border-box;
       }
       .container {
         max-width: 600px;
+        width: 100%;
         margin: 0 auto;
         background-color: #2d3035;
         padding: 20px;
@@ -55,4 +57,41 @@
       }
       a.cancel-link:hover {
         text-decoration: underline;
+      }
+      
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+        
+        .container {
+          padding: 15px;
+        }
+        
+        h2 {
+          font-size: 1.5em;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        body {
+          padding: 10px;
+        }
+        
+        .container {
+          padding: 15px;
+          max-width: 100%;
+        }
+        
+        h2 {
+          font-size: 1.3em;
+        }
+        
+        input, select {
+          font-size: 16px;
+        }
+        
+        button {
+          font-size: 16px;
+        }
       }

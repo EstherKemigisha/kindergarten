@@ -9,17 +9,16 @@ body {
 }
 
 header {
-    background-color: #282c34; /* Light Sky Blue */
+    background-color: #282c34;
     color: #b3e8fd;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 .hero {
-    background-image: url('/imgs/gh.jpg'); /* Replace with your image */
+    background-image: url('/imgs/gh.jpg');
     background-size: cover;
     background-position: center;
-    
     color: black;
     text-align: center;
     padding: 100px 20px;
@@ -27,12 +26,14 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 400px;
 }
 
 .hero h1 {
     font-size: 3em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
 }
 
 .hero p {
@@ -43,7 +44,7 @@ header {
 }
 
 .hero button {
-    background-color: #282c34;/* Hot Pink */
+    background-color: #282c34;
     color: white;
     padding: 15px 30px;
     border: none;
@@ -52,6 +53,7 @@ header {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: bold;
+    min-width: 150px;
 }
 
 .hero button:hover {
@@ -84,7 +86,60 @@ footer {
     background-color:  #282c34;
     color: #87CEEB;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
     margin-top: auto;
-   font-weight: 200;
+    font-weight: 200;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+        min-height: 300px;
+    }
+    
+    .hero h1 {
+        font-size: 2em;
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+    
+    .hero button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    
+    .features {
+        padding: 30px 15px;
+    }
+    
+    .feature {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .hero {
+        padding: 40px 10px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5em;
+    }
+    
+    .hero p {
+        font-size: 0.9em;
+    }
+    
+    .hero button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        width: 100%;
+        max-width: 200px;
+    }
 }

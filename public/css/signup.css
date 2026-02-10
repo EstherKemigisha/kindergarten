@@ -15,6 +15,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 350px;
+    max-width: 90%;
 }
 
 h2 {
@@ -63,4 +64,27 @@ button:hover {
 }
 .login-link {
     color: white;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        width: 100%;
+        max-width: 95%;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    select {
+        font-size: 16px;
+    }
+    
+    button {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
 }
